@@ -76,6 +76,21 @@ async delete(id){
 
 async aggregation(){
     try{
+// return await userModel.count([{
+
+//         $match:{
+//       city:"salam"
+//     }
+// },
+//     {
+//     $group:{
+//         _id:'$city',
+//         count:{$sum:1}
+//     }
+// }
+// ])
+//let result= await userModel.count({city:'tirupur'});
+
 let result= await userModel.distinct('city');
 return {result:result};
     }catch{
