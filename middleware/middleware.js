@@ -7,7 +7,7 @@ server.use(bodyParser.json());
 
 server.use("/", (req, res, next) => {
 	let { protocal, host, port, name } = config.app.db;
-	mongoose.connect(`${protocal}${host}:${port}/${name}`, { useNewUrlParser: true, useUnifiedTopology: true });
+	mongoose.connect(`${protocal}${host}:${process.env.PORT || port}/${name}`, { useNewUrlParser: true, useUnifiedTopology: true });
 	next();
 });
 

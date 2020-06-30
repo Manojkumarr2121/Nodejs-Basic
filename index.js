@@ -9,6 +9,6 @@ const config=require('./config/config.json');
 server.use('/user',userRoute); 
 
 
-server.listen(config.app.port, () => {
+server.listen(process.env.PORT || config.app.port, () => {
 	console.log(`Service is listening to ${config.app.port}`);
 });
